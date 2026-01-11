@@ -15,16 +15,31 @@ const skills = [
   { name: "Tailwind", level: "MASTER", category: "Styling" },
 ];
 
-const levelColors: Record<string, { bg: string; text: string; glow: string }> = {
-  MASTER: { bg: "bg-primary/20", text: "text-primary", glow: "text-glow" },
-  ELITE: { bg: "bg-secondary/20", text: "text-secondary", glow: "text-glow-blue" },
-  ADVANCED: { bg: "bg-amber-500/20", text: "text-amber-400", glow: "" },
+const levelConfig: Record<string, { gradient: string; glow: string; badge: string }> = {
+  MASTER: { 
+    gradient: "from-primary to-purple-400", 
+    glow: "shadow-[0_0_20px_hsl(var(--primary)/0.5)]",
+    badge: "bg-primary/20 text-primary border-primary/30"
+  },
+  ELITE: { 
+    gradient: "from-secondary to-cyan-300", 
+    glow: "shadow-[0_0_20px_hsl(var(--secondary)/0.5)]",
+    badge: "bg-secondary/20 text-secondary border-secondary/30"
+  },
+  ADVANCED: { 
+    gradient: "from-amber-400 to-orange-400", 
+    glow: "shadow-[0_0_20px_hsl(45_100%_50%/0.5)]",
+    badge: "bg-amber-500/20 text-amber-400 border-amber-400/30"
+  },
 };
 
 const SkillsSection = () => {
   return (
-    <section className="py-24 relative overflow-hidden bg-card/30">
-      <div className="absolute inset-0 bg-grid opacity-30" />
+    <section className="py-32 relative overflow-hidden">
+      {/* Background */}
+      <div className="absolute inset-0 bg-card/50" />
+      <div className="absolute inset-0 bg-grid opacity-40" />
+      <div className="absolute inset-0 bg-radial-glow opacity-30" />
       
       <div className="container mx-auto px-6 relative z-10">
         <motion.div
@@ -32,11 +47,20 @@ const SkillsSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+          <motion.span
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            viewport={{ once: true }}
+            className="inline-block text-xs uppercase tracking-[0.3em] text-secondary mb-4"
+          >
+            Skill Inventory
+          </motion.span>
+          <h2 className="text-4xl md:text-6xl font-bold mb-6">
             <span className="text-foreground">ACQUIRED</span>{" "}
-            <span className="text-primary text-glow">SKILLS</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">SKILLS</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-xl mx-auto">
             Arsenal of abilities unlocked through countless battles
@@ -47,21 +71,26 @@ const SkillsSection = () => {
           {skills.map((skill, index) => (
             <motion.div
               key={skill.name}
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.3, delay: index * 0.05 }}
+              initial={{ opacity: 0, scale: 0.8, y: 20 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: index * 0.05 }}
               viewport={{ once: true }}
-              whileHover={{ scale: 1.05, y: -5 }}
-              className="gradient-border rounded-sm p-4 bg-card/80 backdrop-blur-sm cursor-pointer group"
+              whileHover={{ scale: 1.05, y: -8 }}
+              className={`glass-strong rounded-xl p-5 cursor-pointer group relative overflow-hidden ${levelConfig[skill.level].glow} hover:${levelConfig[skill.level].glow}`}
             >
-              <div className="text-xs uppercase tracking-wider text-muted-foreground mb-1">
-                {skill.category}
-              </div>
-              <div className="text-lg font-bold text-foreground mb-2 font-['Orbitron'] group-hover:text-primary transition-colors">
-                {skill.name}
-              </div>
-              <div className={`inline-block px-2 py-1 rounded-sm text-xs font-bold ${levelColors[skill.level].bg} ${levelColors[skill.level].text} ${levelColors[skill.level].glow}`}>
-                {skill.level}
+              {/* Hover gradient overlay */}
+              <div className={`absolute inset-0 bg-gradient-to-br ${levelConfig[skill.level].gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-300`} />
+              
+              <div className="relative z-10">
+                <div className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-2">
+                  {skill.category}
+                </div>
+                <div className={`text-lg font-bold font-['Orbitron'] mb-3 bg-gradient-to-r ${levelConfig[skill.level].gradient} bg-clip-text text-transparent group-hover:opacity-100 transition-all`}>
+                  {skill.name}
+                </div>
+                <div className={`inline-block px-3 py-1.5 rounded-md text-[10px] font-bold tracking-wider border ${levelConfig[skill.level].badge}`}>
+                  {skill.level}
+                </div>
               </div>
             </motion.div>
           ))}
@@ -75,9 +104,12 @@ const SkillsSection = () => {
           viewport={{ once: true }}
           className="mt-16 text-center"
         >
-          <div className="inline-block gradient-border rounded-sm px-6 py-3 bg-card/50 backdrop-blur-sm">
-            <span className="text-primary text-glow font-bold mr-2">+3</span>
-            <span className="text-muted-foreground">Skills currently being acquired...</span>
+          <div className="inline-flex items-center gap-4 glass px-6 py-4 rounded-full">
+            <div className="flex items-center gap-2">
+              <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+              <span className="text-primary text-glow font-bold font-['Orbitron']">+3</span>
+            </div>
+            <span className="text-muted-foreground text-sm">Skills currently being acquired...</span>
           </div>
         </motion.div>
       </div>
