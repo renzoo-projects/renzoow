@@ -3,33 +3,40 @@ import { ExternalLink, Github, Star, ArrowUpRight } from "lucide-react";
 
 const projects = [
   {
-    title: "Shadow Realm",
-    description: "A dark-themed e-commerce platform with real-time inventory and AI recommendations",
-    tags: ["React", "Node.js", "MongoDB", "AI"],
-    rank: "S",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=400&fit=crop",
-  },
-  {
-    title: "Monarch Dashboard",
-    description: "Analytics dashboard with real-time data visualization and custom reporting",
-    tags: ["Next.js", "D3.js", "PostgreSQL"],
+    title: "Laundry Management System",
+    description: "A comprehensive system for managing laundry services, including order tracking and customer management",
+    tags: ["HTML", "JavaScript", "CSS", "PHP", "MySQL"],
     rank: "S",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
   },
   {
-    title: "Hunter's Guild",
-    description: "Team collaboration platform with task management and communication tools",
-    tags: ["React", "Firebase", "WebSocket"],
+    title: "Pathfinding Visualizer",
+    description: "Interactive visualization tool for pathfinding algorithms like A*, Dijkstra, BFS, DFS, and etc.",
+    tags: ["WASM", "C", "HTML", "JavaScript", "CSS"],
     rank: "A",
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=400&fit=crop",
+  },
+  {
+    title: "PondStat",
+    description: "A statistics dashboard for monitoring and analyzing pond water quality data in real-time made for fisheries students from the University of the Philippines Visayas",
+    tags: ["Flutter", "Dart", "Firebase"],
+    rank: "S",
     image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=400&fit=crop",
   },
   {
-    title: "Gate System",
-    description: "Authentication and authorization microservice with OAuth2 integration",
-    tags: ["Node.js", "Redis", "Docker"],
+    title: "Yet Another Flappy Bird Clone (Flappy Chaos)",
+    description: "A chaotic twist on the classic Flappy Bird game, featuring unpredictable obstacles for an extra challenge",
+    tags: ["Godot", "GDScript", "Game Development"],
     rank: "A",
     image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=600&h=400&fit=crop",
   },
+  {
+    title: "Fortnite Shop Discord Bot",
+    description: "A Discord bot that provides real-time updates on Fortnite item shop and player stats",
+    tags: ["JavaScript", "Discord.js", "API"],
+    rank: "B",
+    image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600&h=400&fit=crop",
+  }
 ];
 
 const rankConfig: Record<string, { gradient: string; border: string; glow: string }> = {

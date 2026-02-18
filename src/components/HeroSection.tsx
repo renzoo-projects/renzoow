@@ -1,6 +1,21 @@
 import { motion } from "framer-motion";
 import { ChevronDown, Sparkles } from "lucide-react";
 
+const RANKS = ["E", "D", "C", "B", "A", "S"] as const;
+type Rank = (typeof RANKS)[number];
+
+// Set your current rank here
+const CURRENT_RANK: Rank = "A";
+
+const rankStyles: Record<Rank, { label: string; ring: string; text: string; glow: string }> = {
+  E: { label: "Unranked", ring: "border-muted-foreground/30", text: "text-muted-foreground", glow: "" },
+  D: { label: "Novice", ring: "border-secondary/30", text: "text-secondary", glow: "text-glow-blue" },
+  C: { label: "Rising", ring: "border-primary/30", text: "text-primary", glow: "text-glow" },
+  B: { label: "Skilled", ring: "border-primary/40", text: "text-primary", glow: "text-glow-gold" },
+  A: { label: "Elite", ring: "border-secondary/40", text: "text-secondary", glow: "text-glow-blue" },
+  S: { label: "Legend", ring: "border-primary/60", text: "text-primary", glow: "text-glow " },
+};
+
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -104,8 +119,8 @@ const HeroSection = () => {
             className="inline-flex items-center gap-3 px-6 py-3 rounded-full glass mb-10"
           >
             <Sparkles className="w-4 h-4 text-primary animate-pulse" />
-            <span className="text-sm uppercase tracking-[0.2em] text-muted-foreground font-medium">Hunter Rank</span>
-            <span className="text-2xl font-bold text-primary text-glow font-['Orbitron']">S</span>
+            <span className="text-sm uppercase tracking-[0.2em] text-muted-foreground font-medium">Hunter Rank: </span>
+            <span className={`text-2xl font-bold ${rankStyles[CURRENT_RANK].text} ${rankStyles[CURRENT_RANK].glow} font-['Orbitron']`}>{CURRENT_RANK}</span>
           </motion.div>
 
           {/* Main Title */}
@@ -116,10 +131,9 @@ const HeroSection = () => {
             className="mb-8"
           >
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight leading-none">
-              <span className="block text-foreground/90 mb-2">I AM THE</span>
               <span className="block relative">
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-purple-400 to-secondary animate-pulse-glow">
-                  SHADOW MONARCH
+                  Renz Rendel De Arroz
                 </span>
               </span>
             </h1>
@@ -147,9 +161,9 @@ const HeroSection = () => {
             className="flex flex-wrap justify-center gap-6 md:gap-12 mb-14"
           >
             {[
-              { label: "Projects", value: "50+", color: "primary" },
-              { label: "Experience", value: "5 YRS", color: "secondary" },
-              { label: "Skills", value: "25+", color: "primary" },
+              { label: "Projects", value: "15+", color: "primary" },
+              { label: "Experience", value: "3 YRS", color: "secondary" },
+              { label: "Skills", value: "10+", color: "primary" },
             ].map((stat, index) => (
               <motion.div 
                 key={index} 
@@ -183,7 +197,7 @@ const HeroSection = () => {
               whileTap={{ scale: 0.98 }}
               className="group relative px-8 py-4 bg-gradient-to-r from-primary to-primary/80 text-primary-foreground font-bold uppercase tracking-wider rounded-lg overflow-hidden"
             >
-              <span className="relative z-10">Summon Projects</span>
+             <a href="#projects"><span className="relative z-10">Summon Projects</span></a>
               <div className="absolute inset-0 bg-gradient-to-r from-primary via-purple-500 to-primary bg-[length:200%_100%] animate-shimmer opacity-0 group-hover:opacity-100 transition-opacity" />
               <div className="absolute inset-0 box-glow rounded-lg" />
             </motion.button>
@@ -192,7 +206,7 @@ const HeroSection = () => {
               whileTap={{ scale: 0.98 }}
               className="px-8 py-4 glass text-foreground font-bold uppercase tracking-wider rounded-lg hover:bg-primary/10 transition-all duration-300 border border-primary/30"
             >
-              View Skills
+             <a href="#skills">View Skills</a>
             </motion.button>
           </motion.div>
         </motion.div>

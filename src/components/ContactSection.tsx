@@ -3,10 +3,9 @@ import { Mail, Github, Linkedin, Twitter, Send, Sparkles } from "lucide-react";
 import { useState } from "react";
 
 const socials = [
-  { icon: Github, label: "GitHub", href: "#", color: "hover:text-primary hover:border-primary/50" },
-  { icon: Linkedin, label: "LinkedIn", href: "#", color: "hover:text-secondary hover:border-secondary/50" },
-  { icon: Twitter, label: "Twitter", href: "#", color: "hover:text-primary hover:border-primary/50" },
-  { icon: Mail, label: "Email", href: "mailto:contact@example.com", color: "hover:text-secondary hover:border-secondary/50" },
+  { icon: Github, label: "GitHub", href: "https://github.com/orgs/renzoo-projects/repositories", color: "hover:text-primary hover:border-primary/50", target: "_blank" },
+  { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/renz-rendel-de-arroz-3026113a1/", color: "hover:text-secondary hover:border-secondary/50", target: "_blank" },
+  { icon: Mail, label: "Email", href: "mailto:renzdearroz@gmail.com", color: "hover:text-secondary hover:border-secondary/50" },
 ];
 
 const ContactSection = () => {

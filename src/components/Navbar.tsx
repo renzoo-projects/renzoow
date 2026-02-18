@@ -41,16 +41,12 @@ const Navbar = () => {
             whileHover={{ scale: 1.05 }}
             className="flex items-center gap-2"
           >
-            <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
-              <Zap className="w-5 h-5 text-white" />
-            </div>
             <span className="text-xl font-bold font-['Orbitron']">
-              <span className="text-primary">SL</span>
-              <span className="text-foreground">.</span>
-              <span className="text-foreground">DEV</span>
+              <span className="text-primary">RENZ RENDEL </span>
+              <span className="text-foreground">DE ARROZ</span>
             </span>
           </motion.a>
-
+      
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-2">
             {navItems.map((item, index) => (

@@ -5,13 +5,13 @@ const skills = [
   { name: "TypeScript", level: "MASTER", category: "Language" },
   { name: "Node.js", level: "ELITE", category: "Backend" },
   { name: "Python", level: "ELITE", category: "Language" },
-  { name: "PostgreSQL", level: "ELITE", category: "Database" },
+  { name: "Firebase", level: "ADVANCED", category: "Database" },
   { name: "AWS", level: "ADVANCED", category: "Cloud" },
-  { name: "Docker", level: "ADVANCED", category: "DevOps" },
-  { name: "Figma", level: "MASTER", category: "Design" },
+  { name: "C", level: "ADVANCED", category: "DevOps" },
+  { name: "Figma", level: "ELITE", category: "Design" },
   { name: "Next.js", level: "ELITE", category: "Framework" },
-  { name: "GraphQL", level: "ADVANCED", category: "API" },
-  { name: "Redis", level: "ADVANCED", category: "Database" },
+  { name: "RESTAPI", level: "ADVANCED", category: "API" },
+  { name: "MongoDB", level: "ADVANCED", category: "Database" },
   { name: "Tailwind", level: "MASTER", category: "Styling" },
 ];
 
