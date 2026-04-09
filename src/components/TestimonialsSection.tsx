@@ -1,5 +1,12 @@
 import { motion } from "framer-motion";
 import { Quote } from "lucide-react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const testimonials = [
   {
@@ -38,30 +45,43 @@ const TestimonialsSection = () => {
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-5xl">
-          {testimonials.map((testimonial, index) => (
-            <motion.div
-              key={testimonial.name}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.15 }}
-              viewport={{ once: true }}
-              className="flex flex-col"
-            >
-              <Quote className="w-8 h-8 text-accent/40 mb-6" />
-              <p className="text-foreground leading-relaxed mb-8 flex-1">
-                "{testimonial.quote}"
-              </p>
-              <div>
-                <p className="font-semibold text-foreground text-sm font-sans">
-                  {testimonial.name}
-                </p>
-                <p className="text-muted-foreground text-sm">
-                  {testimonial.role}
-                </p>
-              </div>
-            </motion.div>
-          ))}
+        <div className="max-w-4xl mx-auto">
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            className="w-full"
+          >
+            <CarouselContent>
+              {testimonials.map((testimonial, index) => (
+                <CarouselItem key={testimonial.name} className="md:basis-1/2 lg:basis-1/3">
+                  <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: index * 0.15 }}
+                    viewport={{ once: true }}
+                    className="flex flex-col h-full p-6 bg-muted/30 rounded-2xl"
+                  >
+                    <Quote className="w-8 h-8 text-accent/40 mb-6" />
+                    <p className="text-foreground leading-relaxed mb-8 flex-1">
+                      "{testimonial.quote}"
+                    </p>
+                    <div>
+                      <p className="font-semibold text-foreground text-sm font-sans">
+                        {testimonial.name}
+                      </p>
+                      <p className="text-muted-foreground text-sm">
+                        {testimonial.role}
+                      </p>
+                    </div>
+                  </motion.div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="left-4" />
+            <CarouselNext className="right-4" />
+          </Carousel>
         </div>
       </div>
     </section>

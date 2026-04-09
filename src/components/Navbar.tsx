@@ -22,6 +22,18 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const targetId = href.replace("#", "");
+    const targetElement = document.getElementById(targetId);
+    if (targetElement) {
+      targetElement.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
+
   return (
     <motion.nav
       initial={{ y: -100 }}
@@ -35,7 +47,7 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between">
-          <a href="#home" className="text-lg font-semibold tracking-tight text-foreground font-sans">
+          <a href="#home" onClick={(e) => handleSmoothScroll(e, "#home")} className="text-lg font-semibold tracking-tight text-foreground font-sans">
             Renz<span className="text-accent">.</span>
           </a>
 
@@ -44,6 +56,7 @@ const Navbar = () => {
               <a
                 key={item.label}
                 href={item.href}
+                onClick={(e) => handleSmoothScroll(e, item.href)}
                 className="text-sm text-muted-foreground hover:text-foreground transition-colors"
               >
                 {item.label}
@@ -58,6 +71,7 @@ const Navbar = () => {
             </button>
             <a
               href="#contact"
+              onClick={(e) => handleSmoothScroll(e, "#contact")}
               className="px-5 py-2 bg-primary text-primary-foreground text-sm font-medium rounded-full hover:opacity-90 transition-opacity"
             >
               Hire Me
@@ -94,7 +108,10 @@ const Navbar = () => {
                   <a
                     key={item.label}
                     href={item.href}
-                    onClick={() => setIsMobileMenuOpen(false)}
+                    onClick={(e) => {
+                      handleSmoothScroll(e, item.href);
+                      setIsMobileMenuOpen(false);
+                    }}
                     className="px-4 py-3 text-sm text-muted-foreground hover:text-foreground transition-colors"
                   >
                     {item.label}
