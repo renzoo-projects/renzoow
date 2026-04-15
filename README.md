@@ -1,42 +1,46 @@
 # Renz Rendel De Arroz
 
-## Computer Science Student  
-University of the Philippines Visayas  
+**Computer Science student and full-stack developer building scalable web systems.**
 
-I build systems, not just projects.
-
-I am a Computer Science student focused on backend development and scalable web applications. 
+University of the Philippines Visayas
 
 ---
 
 ## About Me
 
-I enjoy working on logic-heavy systems and backend architecture.  
-I am continuously improving my skills in full-stack development while thinking long-term about building SaaS and fintech platforms.
+I build systems, not just projects.
 
-I value:
+I enjoy solving logic-heavy problems and designing backend architectures that scale. My focus is on clean code, reliable systems, and long-term value in SaaS and fintech applications.
+
+### What I value
+
 - Clean architecture
-- Scalability
+- Scalable solutions
 - Practical problem-solving
-- Long-term vision over short-term trends
+- Long-term thinking over short-term trends
 
 ---
 
-## Current Focus
+## What I'm Working On
 
-- Backend Development  
-- React & Modern Frontend Systems  
-- MERN Stack Applications  
-- Fintech and Investment-Oriented Platforms  
+- Backend development with modern APIs
+- React-based frontend systems
+- MERN stack applications
+- Fintech and investment-focused platforms
 
 ---
 
 ## Selected Projects
 
 ### Laundry Inventory Management App
-- Customer order management  
-- Admin tracking system  
-- Built with structured backend logic  
+- Customer order management system
+- Admin tracking dashboard
+- Built with structured backend logic and scalable workflows
+
+### PondStat
+- Real-time water quality dashboard
+- Designed for fisheries monitoring and analytics
+- Built with Flutter, Dart, and Firebase
 
 (More projects coming soon.)
 
@@ -44,12 +48,12 @@ I value:
 
 ## Tech Stack
 
-- JavaScript / TypeScript  
-- React  
-- Node.js  
-- Express  
-- MongoDB  
-- Vite  
+- JavaScript / TypeScript
+- React
+- Node.js
+- Express
+- MongoDB
+- Vite
 - Tailwind CSS
 - Flutter
 - Firebase
@@ -58,4 +62,6 @@ I value:
 
 ## Contact
 
-Open to collaborations, internships, and building meaningful digital products.
+Open to collaborations, internships, and meaningful product work.
+
+Feel free to connect if you'd like to build something together.
