@@ -7,15 +7,15 @@ const skillCategories = [
   },
   {
     title: "Backend",
-    skills: ["MongoDB", "Firebase", "Node.js", "PostgreSQL", "REST APIs"],
+    skills: ["Express.js", "Node.js", "Firebase", "SQL", "PHP"]
   },
   {
     title: "Tools & Other",
-    skills: ["Figma", "Git", "Laravel", "MySQL"],
+    skills: ["Git", "Laravel", "Netlify", "REST APIs"],
   },
   {
     title: "Creative",
-    skills: ["UI/UX Design", "Godot", "GDScript", "Flutter", "Dart"],
+    skills: ["UI/UX Design", "Figma", "Godot", "GDScript"],
   },
 ];
 

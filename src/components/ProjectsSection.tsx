@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight, Github } from "lucide-react";
+import PondStatImage from "@/assets/images/PondStat.png";
 
 const projects = [
   {
@@ -13,8 +14,8 @@ const projects = [
     title: "PondStat",
     description: "A statistics dashboard for monitoring pond water quality data in real-time, built for UP Visayas fisheries students.",
     tags: ["Flutter", "Dart", "Firebase"],
-    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=400&fit=crop",
-    repo: "https://github.com/renzoo-projects/pondstat",
+    image: PondStatImage,
+    repo: "https://github.com/PondStat/PondStat-Mobile-App",
   },
   {
     title: "Pathfinding Visualizer",
@@ -24,7 +25,7 @@ const projects = [
     repo: "https://github.com/renzoo-projects/pathfinding-visualizer",
   },
   {
-    title: "Flappy Chaos",
+    title: "Flappy Joyride",
     description: "A chaotic twist on Flappy Bird with unpredictable obstacles for an extra challenge.",
     tags: ["Godot", "GDScript"],
     image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=600&h=400&fit=crop",
