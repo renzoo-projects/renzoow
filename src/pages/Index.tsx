@@ -24,9 +24,11 @@ const Index = () => {
         <section id="projects">
           <ProjectsSection />
         </section>
-        <section id="testimonials">
-          <TestimonialsSection />
-        </section>
+        {false && (
+          <section id="testimonials">
+            <TestimonialsSection />
+          </section>
+        )}
         <section id="contact">
           <ContactSection />
         </section>

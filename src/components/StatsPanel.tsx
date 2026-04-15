@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 
 const stats = [
-  { value: "15+", label: "Projects Completed" },
-  { value: "3+", label: "Years Experience" },
+  { value: "10+", label: "Projects Completed" },
+  { value: "2+", label: "Years Experience" },
   { value: "10+", label: "Technologies" },
   { value: "100%", label: "Dedication" },
 ];

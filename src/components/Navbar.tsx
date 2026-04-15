@@ -7,7 +7,6 @@ const navItems = [
   { label: "Home", href: "#home" },
   { label: "Skills", href: "#skills" },
   { label: "Projects", href: "#projects" },
-  { label: "Testimonials", href: "#testimonials" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -48,7 +47,7 @@ const Navbar = () => {
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between">
           <a href="#home" onClick={(e) => handleSmoothScroll(e, "#home")} className="text-lg font-semibold tracking-tight text-foreground font-sans">
-            Renz<span className="text-accent">.</span>
+            renz rendel de arroz<span className="text-accent">.</span>
           </a>
 
           <div className="hidden md:flex items-center gap-8">

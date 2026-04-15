@@ -17,7 +17,7 @@ const ContactSection = () => {
   };
 
   return (
-    <section className="py-24 md:py-32 bg-muted/30">
+    <section className="py-24 md:py-32 bg-background">
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16 max-w-5xl mx-auto">
           {/* Left side */}

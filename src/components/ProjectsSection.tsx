@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Github } from "lucide-react";
 
 const projects = [
   {
@@ -7,30 +7,28 @@ const projects = [
     description: "A comprehensive system for managing laundry services, including order tracking and customer management.",
     tags: ["HTML", "JavaScript", "CSS", "PHP", "MySQL"],
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
-  },
-  {
-    title: "Pathfinding Visualizer",
-    description: "Interactive visualization tool for pathfinding algorithms like A*, Dijkstra, BFS, and DFS.",
-    tags: ["WASM", "C", "HTML", "JavaScript", "CSS"],
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=400&fit=crop",
+    repo: "https://github.com/renzoo-projects/laundry-management-system",
   },
   {
     title: "PondStat",
     description: "A statistics dashboard for monitoring pond water quality data in real-time, built for UP Visayas fisheries students.",
     tags: ["Flutter", "Dart", "Firebase"],
     image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=400&fit=crop",
+    repo: "https://github.com/renzoo-projects/pondstat",
+  },
+  {
+    title: "Pathfinding Visualizer",
+    description: "Interactive visualization tool for pathfinding algorithms like A*, Dijkstra, BFS, and DFS.",
+    tags: ["WASM", "C", "HTML", "JavaScript", "CSS"],
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=400&fit=crop",
+    repo: "https://github.com/renzoo-projects/pathfinding-visualizer",
   },
   {
     title: "Flappy Chaos",
     description: "A chaotic twist on Flappy Bird with unpredictable obstacles for an extra challenge.",
     tags: ["Godot", "GDScript"],
     image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=600&h=400&fit=crop",
-  },
-  {
-    title: "Fortnite Shop Discord Bot",
-    description: "A Discord bot providing real-time Fortnite item shop updates and player stats.",
-    tags: ["JavaScript", "Discord.js", "API"],
-    image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600&h=400&fit=crop",
+    repo: "https://github.com/renzoo-projects/flappy-chaos",
   },
 ];
 
@@ -72,7 +70,17 @@ const ProjectsSection = () => {
                   alt={project.title}
                   className="w-full aspect-[3/2] object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/5 transition-colors duration-300" />
+                <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/20 transition-colors duration-300" />
+                <a
+                  href={project.repo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                >
+                  <div className="w-14 h-14 rounded-full bg-background/95 border border-border text-foreground shadow-lg flex items-center justify-center">
+                    <Github className="w-6 h-6" />
+                  </div>
+                </a>
               </div>
               <div className="flex items-start justify-between gap-4">
                 <div>

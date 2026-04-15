@@ -3,6 +3,14 @@ import { ArrowDown } from "lucide-react";
 import { User } from "lucide-react";
 
 const HeroSection = () => {
+  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
+    e.preventDefault();
+    const target = document.getElementById(targetId);
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Premium animated background */}
@@ -94,7 +102,7 @@ const HeroSection = () => {
               transition={{ delay: 0.2, duration: 0.6 }}
               className="text-sm tracking-[0.3em] uppercase text-muted-foreground mb-6"
             >
-              Developer & Designer
+              Full-Stack Developer
             </motion.p>
 
             <motion.h1
@@ -125,12 +133,14 @@ const HeroSection = () => {
             >
               <a
                 href="#projects"
+                onClick={(e) => handleSmoothScroll(e, "projects")}
                 className="px-8 py-3.5 bg-primary text-primary-foreground text-sm font-medium tracking-wide rounded-full hover:opacity-90 transition-opacity"
               >
                 View Projects
               </a>
               <a
                 href="#contact"
+                onClick={(e) => handleSmoothScroll(e, "contact")}
                 className="px-8 py-3.5 border border-border text-foreground text-sm font-medium tracking-wide rounded-full hover:bg-muted transition-colors"
               >
                 Get in Touch

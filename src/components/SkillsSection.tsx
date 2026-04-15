@@ -3,15 +3,15 @@ import { motion } from "framer-motion";
 const skillCategories = [
   {
     title: "Frontend",
-    skills: ["React", "TypeScript", "Next.js", "Tailwind CSS", "HTML/CSS"],
+    skills: ["React", "TypeScript", "Next.js", "Flutter", "Blade"],
   },
   {
     title: "Backend",
-    skills: ["Node.js", "Python", "PHP", "REST APIs", "Firebase"],
+    skills: ["MongoDB", "Firebase", "Node.js", "PostgreSQL", "REST APIs"],
   },
   {
     title: "Tools & Other",
-    skills: ["Figma", "Git", "AWS", "MongoDB", "MySQL"],
+    skills: ["Figma", "Git", "Laravel", "MySQL"],
   },
   {
     title: "Creative",
