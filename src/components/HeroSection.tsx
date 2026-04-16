@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
 import { User } from "lucide-react";
+import MyPicture from "@/assets/images/MyPicture.jpg";
 
 const HeroSection = () => {
   const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
@@ -81,7 +82,7 @@ const HeroSection = () => {
             />
             <div className="w-52 h-52 md:w-64 md:h-64 rounded-full overflow-hidden border-2 border-border bg-muted flex items-center justify-center relative">
               {/* Replace the placeholder below with your image: */}
-              {/* <img src="/your-photo.jpg" alt="Renz Rendel De Arroz" className="w-full h-full object-cover" /> */}
+              <img src={MyPicture} alt="Renz Rendel De Arroz" className="w-full h-full object-cover" /> 
               <User className="w-20 h-20 text-muted-foreground/40" />
               <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent" />
             </div>
@@ -161,7 +162,9 @@ const HeroSection = () => {
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
         >
-          <ArrowDown className="w-5 h-5 text-muted-foreground" />
+          <a href="#projects" onClick={(e) => handleSmoothScroll(e, "projects")}>
+            <ArrowDown className="w-5 h-5 text-muted-foreground" />
+          </a>
         </motion.div>
       </motion.div>
     </section>

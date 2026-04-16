@@ -1,14 +1,17 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight, Github } from "lucide-react";
 import PondStatImage from "@/assets/images/PondStat.png";
+import LaundryManagementSystem from "@/assets/images/LaundryManageMentSystem.png";
+import PathfindingVisualizer from "@/assets/images/PathfindingVisualizer.png";
+import FlappyJoyride from "@/assets/images/FlappyJoyride.png";
 
 const projects = [
   {
     title: "Laundry Management System",
     description: "A comprehensive system for managing laundry services, including order tracking and customer management.",
     tags: ["HTML", "JavaScript", "CSS", "PHP", "MySQL"],
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
-    repo: "https://github.com/renzoo-projects/laundry-management-system",
+    image: LaundryManagementSystem,
+    repo: "https://github.com/renzoupv/Laundry-Management-System",
   },
   {
     title: "PondStat",
@@ -21,15 +24,15 @@ const projects = [
     title: "Pathfinding Visualizer",
     description: "Interactive visualization tool for pathfinding algorithms like A*, Dijkstra, BFS, and DFS.",
     tags: ["WASM", "C", "HTML", "JavaScript", "CSS"],
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=400&fit=crop",
-    repo: "https://github.com/renzoo-projects/pathfinding-visualizer",
+    image: PathfindingVisualizer,
+    repo: "https://github.com/renzoupv/Pathfinding-Visualizer",
   },
   {
     title: "Flappy Joyride",
-    description: "A chaotic twist on Flappy Bird with unpredictable obstacles for an extra challenge.",
+    description: "Flappy Joyride is a fast-paced survival game that builds on the classic flap-and-dodge mechanic with increasing difficulty and new threats. Players must avoid homing missiles and unpredictably oriented pipes while adapting to faster speeds and escalating hazard spawns.",
     tags: ["Godot", "GDScript"],
-    image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=600&h=400&fit=crop",
-    repo: "https://github.com/renzoo-projects/flappy-chaos",
+    image: FlappyJoyride,
+    repo: "https://github.com/renzoupv/Yet-Another-Flappy-Bird-Clone",
   },
 ];
 
@@ -102,7 +105,9 @@ const ProjectsSection = () => {
                     ))}
                   </div>
                 </div>
-                <ArrowUpRight className="w-5 h-5 text-muted-foreground group-hover:text-accent shrink-0 mt-1 transition-colors" />
+                <a href={project.repo} target="_blank" rel="noopener noreferrer">
+                  <ArrowUpRight className="w-5 h-5 text-muted-foreground group-hover:text-accent shrink-0 mt-1 transition-colors" />
+                </a>
               </div>
             </motion.div>
           ))}
