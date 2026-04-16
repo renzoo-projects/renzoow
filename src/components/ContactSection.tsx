@@ -10,7 +10,6 @@ const socials = [
   { icon: Instagram, label: "Instagram", href: "https://www.instagram.com/renzdearroz" }
 ];
 
-
 const LoadingDots = () => {
   return (
     <div className="flex items-center gap-1">
@@ -39,13 +38,34 @@ const ContactSection = () => {
   const [submitMessage, setSubmitMessage] = useState("");
   const [isSending, setIsSending] = useState(false);
 
-  useEffect(() => {
-  if (submitMessage) {
-    const timer = setTimeout(() => {
-      setSubmitMessage("");
-    }, 10000); // 10 seconds
+  // Status Control
+  const status: "available" | "busy" | "unavailable" = "available";
 
-    return () => clearTimeout(timer);
+  const statusConfig = {
+    available: {
+      text: "Currently available for new projects",
+      color: "bg-emerald-500",
+      shadow: "shadow-emerald-500/50",
+    },
+    busy: {
+      text: "Currently busy with projects",
+      color: "bg-yellow-500",
+      shadow: "shadow-yellow-500/50",
+    },
+    unavailable: {
+      text: "Not accepting new projects",
+      color: "bg-red-500",
+      shadow: "shadow-red-500/50",
+    },
+  };
+
+  useEffect(() => {
+    if (submitMessage) {
+      const timer = setTimeout(() => {
+        setSubmitMessage("");
+      }, 10000);
+
+      return () => clearTimeout(timer);
     }
   }, [submitMessage]);
 
@@ -143,10 +163,15 @@ const ContactSection = () => {
               ))}
             </div>
 
+            {/* STATUS */}
             <div className="flex items-center gap-3">
-              <div className="w-2.5 h-2.5 bg-emerald-500 rounded-full animate-ping" />
+              <div
+                className={`w-2.5 h-2.5 rounded-full animate-pulse shadow-lg ${
+                  statusConfig[status].color
+                } ${statusConfig[status].shadow}`}
+              />
               <span className="text-sm text-muted-foreground">
-                Currently available for new projects
+                {statusConfig[status].text}
               </span>
             </div>
           </motion.div>
@@ -191,7 +216,6 @@ const ContactSection = () => {
               </div>
             ))}
 
-            {/* MESSAGE */}
             <div>
               <label className="block text-sm text-muted-foreground mb-2">
                 Message
@@ -216,7 +240,6 @@ const ContactSection = () => {
               )}
             </div>
 
-            {/* BUTTON */}
             <button
               type="submit"
               disabled={isSending}
@@ -235,9 +258,8 @@ const ContactSection = () => {
               )}
             </button>
 
-            {/* STATUS */}
             {submitMessage && (
-              <div className="mt-3 text-sm text-emerald-500 flex items-center gap-2 transition-opacity duration-500">
+              <div className="mt-3 text-sm text-emerald-500 flex items-center gap-2">
                 <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
                 {submitMessage}
               </div>

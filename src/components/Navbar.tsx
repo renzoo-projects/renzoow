@@ -1,7 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
-import { Menu, X, Sun, Moon } from "lucide-react";
-import { useTheme } from "@/components/ThemeProvider";
+import { Menu, X } from "lucide-react";
 
 const navItems = [
   { label: "Home", href: "#home" },
@@ -13,7 +12,6 @@ const navItems = [
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
@@ -61,13 +59,6 @@ const Navbar = () => {
                 {item.label}
               </a>
             ))}
-            <button
-              onClick={toggleTheme}
-              className="p-2 rounded-full text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
-              aria-label="Toggle theme"
-            >
-              {theme === "dark" ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
-            </button>
             <a
               href="#contact"
               onClick={(e) => handleSmoothScroll(e, "#contact")}
@@ -78,13 +69,6 @@ const Navbar = () => {
           </div>
 
           <div className="flex items-center gap-2 md:hidden">
-            <button
-              onClick={toggleTheme}
-              className="p-2 rounded-full text-muted-foreground hover:text-foreground"
-              aria-label="Toggle theme"
-            >
-              {theme === "dark" ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
-            </button>
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="p-2 text-foreground"

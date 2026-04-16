@@ -123,7 +123,8 @@ const HeroSection = () => {
               transition={{ delay: 0.6, duration: 0.6 }}
               className="text-lg md:text-xl text-muted-foreground max-w-lg mx-auto lg:mx-0 mb-10 leading-relaxed"
             >
-              I craft thoughtful digital experiences with clean code and intuitive design.
+              I build web and mobile applications, along with automated systems, focusing on clean UI, usability, performance, and innovation.
+              I enjoy turning ideas into simple, functional digital experiences using modern technologies.
             </motion.p>
 
             <motion.div
