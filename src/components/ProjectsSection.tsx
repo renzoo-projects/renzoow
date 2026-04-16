@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight, Github } from "lucide-react";
 import PondStatImage from "@/assets/images/PondStat.png";
-import LaundryManagementSystem from "@/assets/images/LaundryManageMentSystem.png";
+import LaundryManagementSystem from "@/assets/images/LaundryManagementSystem.png";
 import PathfindingVisualizer from "@/assets/images/PathfindingVisualizer.png";
 import FlappyJoyride from "@/assets/images/FlappyJoyride.png";
 
