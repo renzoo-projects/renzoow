@@ -134,11 +134,11 @@ const HeroSection = () => {
               className="flex flex-wrap justify-center lg:justify-start gap-4"
             >
               <a
-                href="#projects"
-                onClick={(e) => handleSmoothScroll(e, "projects")}
+                target="_blank"
+                href="/resume.pdf"
                 className="px-8 py-3.5 bg-primary text-primary-foreground text-sm font-medium tracking-wide rounded-full hover:opacity-90 transition-opacity"
               >
-                View Projects
+                View Resume
               </a>
               <a
                 href="#contact"
